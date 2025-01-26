@@ -17,7 +17,7 @@ const Register = () => {
   };
 
   const handleClick = () => {
-    if (username === "") {
+    if (username === "" || username === "admin") {
       setIsShow(true);
     } else {
       setIsShow(false);

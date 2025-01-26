@@ -21,7 +21,7 @@ const Dashboard = () => {
 
   const back = () => {
     localStorage.removeItem("username");
-    sessionStorage.removeItem("username ");
+    sessionStorage.removeItem("username");
     router.push("/");
   };
 
