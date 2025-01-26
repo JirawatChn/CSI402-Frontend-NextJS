@@ -1,11 +1,11 @@
 "use client";
-import { use, useState } from "react";
-import { TextInput } from "./Component/TextInput";
 import Link from "next/link";
-import { AlertBox } from "./Component/AlertBox";
+import { AlertBox } from "../Component/AlertBox";
+import { TextInput } from "../Component/TextInput";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 
-export default function Home() {
+const Register = () => {
   const router = useRouter();
   const [username, setUsername] = useState("");
   const [isShow, setIsShow] = useState(false);
@@ -17,17 +17,16 @@ export default function Home() {
   };
 
   const handleClick = () => {
-    if (username === "admin") {
+    if (username === "") {
+      setIsShow(true);
+    } else {
       setIsShow(false);
       router.push("/dashboard");
-    } else {
-      setIsShow(true);
     }
   };
-
   return (
     <div>
-      <p className="font-bold text-lg justify-center flex">User Validation</p>
+      <p className="font-bold text-lg justify-center flex">Access Registration</p>
       <div className="w-96 flex pb-3">
         <TextInput
           text="Username:"
@@ -39,15 +38,16 @@ export default function Home() {
           className="bg-green-400 hover:bg-green-500 text-white px-5 rounded-full"
           onClick={() => handleClick()}
         >
-          Check
+          Enter
         </button>
       </div>
-      <AlertBox text="Unauthorized Please Register" isShow={isShow} />
+      <AlertBox text="Please enter a username" isShow={isShow} />
       <div className="pt-2">
-        <Link href="/register" className="p-2">
-          Go to Register
+        <Link href="/" className="p-2">
+          Go to Mainpage
         </Link>
       </div>
     </div>
   );
-}
+};
+export default Register;
