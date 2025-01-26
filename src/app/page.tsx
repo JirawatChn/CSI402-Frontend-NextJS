@@ -17,6 +17,7 @@ export default function Home() {
 
   const handleClick = () => {
     if (username === "admin") {
+      localStorage.setItem("username", username);
       setIsShow(false);
       router.push("/dashboard");
     } else {
