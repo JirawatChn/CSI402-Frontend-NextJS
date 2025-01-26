@@ -13,7 +13,6 @@ export default function Home() {
   const handleUsername = (e: any) => {
     const v = e.target.value;
     setUsername(v);
-    console.log(v);
   };
 
   const handleClick = () => {
@@ -42,7 +41,7 @@ export default function Home() {
           Check
         </button>
       </div>
-      <AlertBox text="Unauthorized Please Register" isShow={isShow} />
+      <AlertBox text="Unauthorized Please Filled Input or Register" isShow={isShow} />
       <div className="pt-2">
         <Link href="/register" className="p-2">
           Go to Register

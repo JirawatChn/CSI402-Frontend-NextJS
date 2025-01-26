@@ -21,6 +21,7 @@ const Register = () => {
       setIsShow(true);
     } else {
       setIsShow(false);
+      sessionStorage.setItem("username", username);
       router.push("/dashboard");
     }
   };
